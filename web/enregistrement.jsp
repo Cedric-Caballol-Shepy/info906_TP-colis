@@ -12,13 +12,14 @@
 </head>
 <body>
     <h1>Enregistrer un colis</h1>
+    <p>test here : ${test}</p>
     <form>
         Poids : <input type="number" name="poids">
         Valeur : <input type="number" name="valeur"> €
         <p>Position : </p>
-        Latitude : <input type="text">
-        Longitude : <input type="text">
-        Emplacement : <input type="text">
+        Latitude : <input type="text" name="latitude">
+        Longitude : <input type="text" name="longitude">
+        Emplacement : <input type="text" name="emplacement">
     </form>
 </body>
 </html>

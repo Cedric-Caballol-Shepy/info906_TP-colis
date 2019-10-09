@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+    <a href="EnregistrementServlet">Enregistrer un colis</a>
   </body>
 </html>
