@@ -7,7 +7,7 @@ public class Colis {
     @Id @GeneratedValue
     private long id;
 
-    public Colis() { /* Nothing to do here*/ }
+    public Colis() { /* Nothing to do here */ }
 
     public long getId() {
         return id;
