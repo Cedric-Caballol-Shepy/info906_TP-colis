@@ -72,6 +72,7 @@ public class Colis {
         this.etat = Etat.ENREGISTREMENT;
     }
 
+    @Enumerated(EnumType.STRING)
     private Etat etat;
 }
 
