@@ -59,9 +59,9 @@ public class Colis {
 
     private int poids;
     private float valeur;
-    @ManyToOne
+    @OneToOne
     private Position origine;
-    @ManyToOne
+    @OneToOne
     private Position destination;
 
     public Colis(int poids, float valeur, Position origine, Position destination) {

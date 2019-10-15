@@ -1,14 +1,15 @@
 package model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Position {
-    @Id
+    @Id @GeneratedValue
+    private long id;
+
     float latitude;
-    @Id
     float longitude;
-    @Id
     String emplacement;
 }
