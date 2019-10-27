@@ -1,6 +1,8 @@
 package servlet;
 
 import ejb.ColisEJB;
+import model.Colis;
+import model.Position;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -15,13 +17,20 @@ public class ProgressionServlet extends HttpServlet {
     @EJB
     ColisEJB ejb;
 
-    //TODO
     public void doGet(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
+        request.setAttribute("idColis",request.getParameter("idColis"));
         request.getRequestDispatcher("/progression.jsp").forward(request,response);
     }
 
-    //TODO
     protected void doPost(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-
+        long id = Long.parseLong(request.getParameter("idColis"));
+        float latitude = Float.parseFloat(request.getParameter("latitude"));
+        float longitude = Float.parseFloat(request.getParameter("longitude"));
+        String emplacement = request.getParameter("emplacement");
+        Position p = new Position(latitude, longitude, emplacement);
+        Colis c = ejb.findColis(id);
+        c.setOrigine(p);
+        ejb.updateColis(c);
+        response.sendRedirect(request.getContextPath() + "/SuiviServlet?idColis="+id);
     }
 }

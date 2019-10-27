@@ -38,4 +38,9 @@ public class ColisEJB {
         return em.find(Colis.class, id);
     }
 
+    public Colis updateColis(Colis c){
+        em.merge(c);
+        return c;
+    }
+
 }
