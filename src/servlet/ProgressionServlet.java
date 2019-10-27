@@ -24,13 +24,10 @@ public class ProgressionServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
         long idColis = Long.parseLong(request.getParameter("idColis"));
         request.setAttribute("idColis", idColis);
-
         Colis c = ejb.findColis(idColis);
         request.setAttribute("currentEtat", c.getEtat());
-
         List<Etat> etatsList = new ArrayList<Etat>(Arrays.asList(Etat.values()));
         request.setAttribute("etatsList", etatsList);
-
         request.getRequestDispatcher("/progression.jsp").forward(request,response);
     }
 
