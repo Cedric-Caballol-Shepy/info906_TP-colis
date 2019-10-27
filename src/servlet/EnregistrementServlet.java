@@ -1,6 +1,7 @@
 package servlet;
 
 import ejb.ColisEJB;
+import model.Colis;
 import model.Position;
 
 import javax.ejb.EJB;
@@ -18,8 +19,7 @@ public class EnregistrementServlet extends HttpServlet {
     ColisEJB ejb;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
-        //TODO : enlever cet exemple (juste la ligne suivante) quand on aura utilisé un truc comme ça :
-        request.setAttribute("test", "test123"); //TODO : et le faire aussi dans le HTML of course !
+        request.setAttribute("idColis", request.getParameter("idColis"));
         request.getRequestDispatcher("/enregistrement.jsp").forward(request,response);
     }
 
@@ -34,9 +34,8 @@ public class EnregistrementServlet extends HttpServlet {
         String emplacementDest = request.getParameter("emplacementDest");
         Position positionOrig = new Position(latitudeOrig, longitudeOrig, emplacementOrig);
         Position positionDest = new Position(latitudeDest, longitudeDest, emplacementDest);
-
-        ejb.addColis(poids, valeur, positionOrig, positionDest);
-        request.getRequestDispatcher("/index.jsp").forward(request,response);
+        Colis c = ejb.addColis(poids, valeur, positionOrig, positionDest);
+        response.sendRedirect(request.getContextPath() + "/EnregistrementServlet?idColis="+c.getId());
     }
 
 }
