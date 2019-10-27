@@ -34,4 +34,8 @@ public class ColisEJB {
         return c;
     }
 
+    public Colis findColis(long id){
+        return em.find(Colis.class, id);
+    }
+
 }

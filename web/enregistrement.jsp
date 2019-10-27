@@ -16,8 +16,12 @@
     <div>
         <c:if test="${not empty idColis}">
             <p>Vous avez enregistré le colis : ${idColis}</p>
+            <a href="ProgressionServlet?idColis=${idColis}">Changer la progression du colis</a>
+            <br>
+            <a href="SuiviServlet?idColis=${idColis}">Suivre le colis</a>
         </c:if>
     </div>
+    <br>
     <form method="post">
         Poids : <input type="number" name="poids"> g
         Valeur : <input type="number" step="0.01" name="valeur"> €

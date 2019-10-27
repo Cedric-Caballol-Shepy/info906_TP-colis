@@ -12,5 +12,7 @@
   </head>
   <body>
     <a href="EnregistrementServlet">Enregistrer un colis</a>
+    <br>
+    <a href="RechercheServlet">Rechercher un colis (progression ou suivi)</a>
   </body>
 </html>
