@@ -77,10 +77,3 @@ public class Colis {
 }
 
 
-enum Etat {
-    ENREGISTREMENT,
-    ATTENTE,
-    ACHEMINEMENT,
-    BLOQUE,
-    LIVRE
-}
