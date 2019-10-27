@@ -19,5 +19,7 @@
     <p>Emplacement : ${emplDest}</p>
     <hr>
     <p>Etat : ${etat}</p>
+    <br>
+    <a href="index.jsp">Retour à l'accueil</a>
 </body>
 </html>

@@ -10,5 +10,7 @@
     <a href="ProgressionServlet?idColis=${idColis}">Changer la progression du colis</a>
     <br>
     <a href="SuiviServlet?idColis=${idColis}">Suivre le colis</a>
+    <br>
+    <a href="index.jsp">Retour à l'accueil</a>
 </body>
 </html>
